@@ -19,19 +19,6 @@
     <div class="col-sm-2">
 
       {% block sidebar %}
-        <div class="sidebar-user">
-          {% if user.is_authenticated %}
-            <p>
-              <a href="{% url 'taxi:driver-detail' user.id %}">
-                {{ user.username }}
-              </a>
-            </p>
-            <p><a href="{% url 'logout' %}">Logout</a></p>
-          {% else %}
-            <p><a href="{% url 'login' %}">Login</a></p>
-          {% endif %}
-        </div>
-
         {% include "includes/sidebar.html" %}
       {% endblock %}
 

@@ -1,11 +1,3 @@
-"""taxi_service URL Configuration"""
-
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include(("taxi.urls", "taxi"), namespace="taxi")),
@@ -19,4 +11,7 @@ urlpatterns = [
         auth_views.LogoutView.as_view(template_name="registration/logged_out.html"),
         name="logout",
     ),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(
+    settings.STATIC_URL,
+    document_root=settings.STATIC_ROOT,
+)
